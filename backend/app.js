@@ -1,7 +1,7 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 
-const placeRoutes = require('./routes/places');
+import {router as placeRoutes} from './routes/places.js';
 
 const PORT = process.env.PORT || 3000;
 const app = express();

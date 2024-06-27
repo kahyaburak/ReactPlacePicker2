@@ -1,13 +1,17 @@
-const express = require('express');
+import express from 'express';
 
-const placeController = require('../controller/places-controller');
+import {
+  getPlaces,
+  getUserPlaces,
+  putPlaces,
+} from '../controller/places-controller.js';
 
 const router = express.Router();
 
-router.get('/places', placeController.getPlaces);
+router.get('/places', getPlaces);
 
-router.get('/user-places', placeController.getUserPlaces);
+router.get('/user-places', getUserPlaces);
 
-router.put('/user-places', placeController.putPlaces);
+router.put('/user-places', putPlaces);
 
-module.exports = router;
+export {router};

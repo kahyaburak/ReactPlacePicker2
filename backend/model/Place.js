@@ -1,7 +1,9 @@
-// models/place.js
-const fs = require('node:fs/promises');
-const path = require('path');
+import fs from 'node:fs/promises';
+import path, {dirname} from 'path';
+import {fileURLToPath} from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 class Place {
   static placesFilePath = path.join(__dirname, '../data/places.json');
   static userPlacesFilePath = path.join(__dirname, '../data/user-places.json');
@@ -21,4 +23,4 @@ class Place {
   }
 }
 
-module.exports = Place;
+export default Place;

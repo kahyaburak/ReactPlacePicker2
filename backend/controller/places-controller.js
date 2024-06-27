@@ -1,5 +1,4 @@
-// controllers/placeController.js
-const Place = require('../models/place');
+import Place from '../model/Place.js';
 
 async function getPlaces(req, res) {
   try {
@@ -29,8 +28,4 @@ async function putPlaces(req, res) {
   }
 }
 
-module.exports = {
-  getPlaces,
-  getUserPlaces,
-  putPlaces,
-};
+export {getPlaces, getUserPlaces, putPlaces};
