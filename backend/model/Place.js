@@ -15,6 +15,13 @@ class Place {
 
   static async getUserPlaces() {
     const fileContent = await fs.readFile(this.userPlacesFilePath);
+
+    //if the user-places.json is completely empty, fills it with an empty squared backets instead
+    if (fileContent.length === 0) {
+      await fs.writeFile(this.userPlacesFilePath, '[]');
+      return [];
+    }
+    //
     return JSON.parse(fileContent);
   }
 
